@@ -1,3 +1,7 @@
-from task import exibir
+from fastapi import FastAPI
 
-print(exibir.delay())
+app =  FastAPI()
+
+@app.get('/home')
+def return_nothing():
+    return {'message':'Nothing'}
