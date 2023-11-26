@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+import task as tk
 
 app =  FastAPI()
 
 @app.get('/home')
-def return_nothing():
-    return {'message':'Nothing'}
+def home():
+    msg = tk.home.delay()
+    return msg
