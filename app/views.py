@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.http.response import HttpResponse
+from . import tasks as tk
 
-# Create your views here.
+def test(request):
+    tk.test.delay()
+    return HttpResponse ('Bem vindo')
