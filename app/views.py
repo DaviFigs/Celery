@@ -4,4 +4,4 @@ from . import tasks as tk
 
 def test(request):
     tk.test.delay()
-    return HttpResponse ('Bem vindo')
+    return render(request, 'forms.html')
