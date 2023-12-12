@@ -4,4 +4,4 @@ import time
 @shared_task
 def test():
     time.sleep(5)
-    return 'teste'
+    return {'test':'this is a test'}
