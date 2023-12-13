@@ -19,11 +19,11 @@ def configure_image(name, cpf):
         #font
 
         black_rgb =(0,0,0)
-        font = ImageFont.truetype()
+        #font = ImageFont.truetype
         draw = ImageDraw.Draw(image)
 
-        draw.text(coord_data, data,font=font, fill=black_rgb)
-        draw.text(coord_name, name,font=font, fill=black_rgb)
+        draw.text(coord_data, data, fill=black_rgb)
+        draw.text(coord_name, name, fill=black_rgb)
         image.save(f'invite_for_{name}.png')
         final_image = image
         return final_image
