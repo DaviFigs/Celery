@@ -138,3 +138,5 @@ class SendEmail:
         content= f'Hello {name}, You have asked for your invite some time ago\n here is!!\n{image}'
         self.email_server.sendmail(sender, recipient, content)
 
+#   TEMOS PROBLEMAS EM TUDO, FAZER TESTES COM A CRIAÇÃO DE IMAGENS E O ENVIO DE EMALS
+#   DESCOBRIR UMA FORMA SAUDÁVEL DE FAZER CRIAÇÃO DO SERVIDOR DO EMAIL SENDER
