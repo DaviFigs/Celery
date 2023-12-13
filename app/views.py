@@ -15,11 +15,7 @@ def processing(request):
         cpf = request.POST.get('cpf')
         email = request.POST.get('email')
 
-        #first we have to configure the image before we send email task
-        
-
-
-
+        tk.send_invite.delay(name, cpf, email)
         return redirect('success')
 
     else:

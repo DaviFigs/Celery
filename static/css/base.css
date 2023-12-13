@@ -2,11 +2,9 @@
     padding: 0px;
     margin: 0px;
     font-family: monospace;
+    background-color: aliceblue;
 }
 
-div{
-    border: 1px solid #000;
-}
 .formulary{
     margin-top: 25%;
 }
