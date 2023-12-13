@@ -12,6 +12,8 @@
         <div class="col-md-4">
             <br>
             <div class="formulary">
+                <h1>Insert your data</h1>
+                <br>
                 <form method="POST" action="{% url "processing" %}">
                     {% csrf_token %}
                     <input name="name" class="form form-control" type="text" placeholder="Insert your full name...">

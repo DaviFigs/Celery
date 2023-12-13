@@ -8,9 +8,8 @@ def test():
     return {'test':'this is a test'}
 
 
-
-
 @shared_task
-def configure_image():
+def configure_image(name, cpf,email):
+    
     pass
 

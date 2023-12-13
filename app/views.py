@@ -15,6 +15,11 @@ def processing(request):
         cpf = request.POST.get('cpf')
         email = request.POST.get('email')
 
+        #first we have to configure the image before we send email task
+        
+
+
+
         return redirect('success')
 
     else:
