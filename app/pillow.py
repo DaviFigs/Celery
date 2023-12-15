@@ -25,3 +25,6 @@ def configure_image(name, cpf):
         raise 'Something get wrong'
     
 
+
+    
+
