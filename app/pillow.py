@@ -19,7 +19,7 @@ def configure_image(name):
 
         draw.text(coord_data, data, font=font,fill=black_rgb)
         draw.text(coord_name, name, font=font,fill=black_rgb)
-        image.save(f'invite_for_{name}.png')
+        #image.save(f'invite_for_{name}.png') we won't save the pics
         final_image = image
         return final_image
     
