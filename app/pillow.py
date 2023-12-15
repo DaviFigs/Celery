@@ -5,24 +5,27 @@ from datetime import date
 
 #name = (5,9 cm, 18,80 cm)
 
-def configure_image(name, cpf):
+def configure_image(name):
     try:
-        data = date.today().strtime('%d%m%Y')
-        coord_data = (264,544)
-        coord_name = (222, 710)
+        data = date.today().strftime('%d/%m/%Y')
+        coord_data = (590,1180)
+        coord_name = (350, 1790)
 
         image = Image.open(r'media/card.png')
         #font
 
         black_rgb =(0,0,0)
+        font = ImageFont.truetype('font/roboto/Roboto-Regular.ttf', 60)
         draw = ImageDraw.Draw(image)
 
-        draw.text(coord_data, data, fill=black_rgb)
-        draw.text(coord_name, name, fill=black_rgb)
-        final_image = image.save(f'invite_for_{name}.png')
+        draw.text(coord_data, data, font=font,fill=black_rgb)
+        draw.text(coord_name, name, font=font,fill=black_rgb)
+        image.save(f'invite_for_{name}.png')
+        final_image = image
         return final_image
-    except:
-        raise 'Something get wrong'
+    
+    except Exception as e:
+        raise f'Something get wrong: {e}'
     
 
 
