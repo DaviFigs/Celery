@@ -1,5 +1,6 @@
 from django.test import TestCase
 import smtplib
+from email.message import EmailMessage
 
 # Create your tests here.
 
@@ -54,15 +55,15 @@ class SendEmail:
         self.email_server.sendmail(sender, recipient, content)
 
 
-image = configure_image('Carlos Figueiredo')
+image = configure_image('Giovana Pianezze')
 
-
-
+'''
+#first try withoout html
 def send_mail(email, name):
     try:
         email_server = smtplib.SMTP('smtp.gmail.com', 587)
         email_server.starttls()
-        email_server.login('emailsenderneg@gmail.com','emailsender1234')
+        email_server.login('emailsenderneg@gmail.com','egoz zmsj tpva ptki')
         sender = 'emailsenderneg@gmail.com'
         recipient = email
         content= f'Hello {name}, You have asked for your invite some time ago\n here is!!\n{image}'
@@ -72,7 +73,41 @@ def send_mail(email, name):
         print(e)
         return f'Error: {e}'
 
-send_mail('devdeoliveira06@gmail.com', 'Carlos Figueiredo')
+send_mail('giovana.talaveira@estudante.ifms.edu.br', 'Giovana')'''
+
+
+def send_mail(email, name):
+    try:
+        email_server = smtplib.SMTP('smtp.gmail.com', 587)
+        email_server.starttls()
+        email_server.login('emailsenderneg@gmail.com','egoz zmsj tpva ptki')
+        sender = 'emailsenderneg@gmail.com'
+        recipient = email
+
+        message = EmailMessage()
+        message['Subject'] = 'Here is your invite'
+        message_body = f"""
+
+                    <h1>Good Morning!! {name}\n</h1>
+                    <h5>You have asked for a invite, so, there is your invite!!</h5>
+                    <img src="/home/davi/DEV/GIT/Celery/Celery/media/card.png"></img>
+
+                        """
+        message.add_header('Content-Type', 'text/html')
+        message.set_payload(message_body)
+
+        email_server.sendmail(sender, recipient, message.as_string().encode('utf-8'))
+        email_server.quit()
+    except Exception as e:
+        print(e)
+        return f'Error: {e}'
+
+send_mail('emailsenderneg@gmail.com', 'Giovana')
+
+
+
+
+
 
 
 

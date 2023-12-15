@@ -121,7 +121,7 @@ CELERY_TASK_SERIALIZER = 'json'
 #email: emailsenderneg
 #password: emailsender123
 
-class SendEmail:
+'''class SendEmail:
     def __init__(self) -> None:
         self.email_server = smtplib.SMTP('smtp.gmail.com', 587)
         
@@ -140,3 +140,4 @@ class SendEmail:
 
 #   TEMOS PROBLEMAS EM TUDO, FAZER TESTES COM A CRIAÇÃO DE IMAGENS E O ENVIO DE EMALS
 #   DESCOBRIR UMA FORMA SAUDÁVEL DE FAZER CRIAÇÃO DO SERVIDOR DO EMAIL SENDER
+'''

@@ -12,7 +12,6 @@ def configure_image(name):
         coord_name = (350, 1790)
 
         image = Image.open(r'media/card.png')
-        #font
 
         black_rgb =(0,0,0)
         font = ImageFont.truetype('font/roboto/Roboto-Regular.ttf', 60)
