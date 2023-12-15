@@ -12,10 +12,9 @@ def succes(request):
 def processing(request):
     if request.method == 'POST':
         name = request.POST.get('name')
-        cpf = request.POST.get('cpf')
         email = request.POST.get('email')
 
-        tk.send_invite.delay(name, cpf, email)
+        tk.send_invite.delay(name, email)
         return redirect('success')
 
     else:

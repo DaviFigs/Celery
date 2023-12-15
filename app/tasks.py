@@ -1,7 +1,7 @@
 from celery import shared_task
 import time
 from . import pillow as pl
-from core.settings import SendEmail
+from . import email as ems
 
 @shared_task
 def test():
@@ -10,13 +10,12 @@ def test():
 
 
 @shared_task
-def send_invite(name, cpf,email):
+def send_invite(name,email):
     try:
-        image = pl.configure_image(name, cpf)
-        sender = SendEmail()
-        sender.send_email(email, name, image)
-        return {'success':'email was send'}
-    except:
-        return {'error':f'Cannot send email'}
+        image = pl.configure_image(name)
+        ems.send_mail(email, name)
+        return {'Success':'Email was sent'}
 
+    except Exception as e:
+        return {'Error',f'{e}'}
 

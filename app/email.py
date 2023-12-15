@@ -1,12 +1,15 @@
 import smtplib
 from email.message import EmailMessage
+from core.settings import EMAIL, PASSWORD
 
 def send_mail(email, name):
     try:
+        #making connection with server
         email_server = smtplib.SMTP('smtp.gmail.com', 587)
         email_server.starttls()
-        email_server.login('emailsenderneg@gmail.com','egoz zmsj tpva ptki')
-        sender = 'emailsenderneg@gmail.com'
+        email_server.login(EMAIL,PASSWORD)#this is this app token
+
+        sender = EMAIL
         recipient = email
         message = EmailMessage()
         message['Subject'] = 'Here is your invite'
@@ -22,7 +25,7 @@ def send_mail(email, name):
 
         email_server.sendmail(sender, recipient, message.as_string().encode('utf-8'))
         email_server.quit()
-        
+
     except Exception as e:
         print(e)
         return f'Error: {e}'

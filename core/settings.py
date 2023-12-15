@@ -117,27 +117,5 @@ CELERY_TASK_SERIALIZER = 'json'
 
 #EMAIL CONFIG
 
-
-#email: emailsenderneg
-#password: emailsender123
-
-'''class SendEmail:
-    def __init__(self) -> None:
-        self.email_server = smtplib.SMTP('smtp.gmail.com', 587)
-        
-    def __enter__(self, ):
-        self.email_server.starttls()
-        self.email_server.login('emailsenderneg@gmail.com', 'emailsender123')
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.email_server.quit()
-
-    def send_email(self, email, name, image):
-        sender = 'emailsenderneg@gmail.com'
-        recipient = [f'{email}']
-        content= f'Hello {name}, You have asked for your invite some time ago\n here is!!\n{image}'
-        self.email_server.sendmail(sender, recipient, content)
-
-#   TEMOS PROBLEMAS EM TUDO, FAZER TESTES COM A CRIAÇÃO DE IMAGENS E O ENVIO DE EMALS
-#   DESCOBRIR UMA FORMA SAUDÁVEL DE FAZER CRIAÇÃO DO SERVIDOR DO EMAIL SENDER
-'''
+EMAIL = 'emailsenderneg@gmail.com'
+PASSWORD = 'egoz zmsj tpva ptki'
